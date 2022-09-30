@@ -5,12 +5,13 @@ import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
+import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class SomeBusinessTest2 {
 
+	@InjectMocks
 	private SomeBusinessImpl businessImpl;
 
 	@Mock
@@ -28,6 +29,7 @@ class SomeBusinessTest2 {
 
 	}
 
+	@Test
 	void testFindTheGreatestFromAllDataForOne() {
 		// given
 		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] { 5 }); // First come from last where input should
