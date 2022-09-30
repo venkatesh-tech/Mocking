@@ -28,4 +28,20 @@ class SomeBusinessTest2 {
 
 	}
 
+	void testFindTheGreatestFromAllDataForOne() {
+		// given
+		when(dataServiceMock.retrieveAllData()).thenReturn(new int[] { 5 }); // First come from last where input should
+																				// be taken
+		SomeBusinessImpl businessImpl = new SomeBusinessImpl(dataServiceMock); // then pass it to the class instance
+																				// //beacuse we are using constructor in
+																				// SomeBusinessImpl we are passing it
+																				// like this
+		int result = businessImpl.findTheGreatestFromAllData(); // then call the outer method
+		// when
+		int actual = 5;
+		// then
+		assertEquals(result, actual);
+
+	}
+
 }
